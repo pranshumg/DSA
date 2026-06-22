@@ -1,3 +1,3 @@
-# competitive-programming
+# DSA
 
-Library code for programming contests
+Solutions for DSA problems, organized by topic
