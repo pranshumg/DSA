@@ -3,6 +3,7 @@
 using namespace std;
 
 /* Palindrome partitioning */
+// https://leetcode.com/problems/palindrome-partitioning/
     
 bool is_palindrome(string& s, int l, int r) {
     while (l < r) {
