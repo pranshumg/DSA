@@ -35,7 +35,6 @@ bool solve(int idx, int i, int j, int m, int n, string& word, vector<vector<bool
 // TC - O(m * n * 3^L), SC - O(m * n + L) where L = word length
 bool exist(vector<vector<char>>& board, string word) {
     int m = int(board.size()), n = int(board[0].size());
-    string s = "";
     vector<vector<bool>> vis(m, vector<bool>(n, false));
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < n; j++) {
