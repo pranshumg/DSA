@@ -16,7 +16,7 @@ public:
 };
 
 // TC - O(n), SC - O(1)
-Node* delete_node(Node* head, int k) {
+Node* delete_kth_node(Node* head, int k) {
     if (!head || k <= 0) {
         return head;
     }
