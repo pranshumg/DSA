@@ -2,7 +2,7 @@
 
 using namespace std;
 
-/* Insert head */
+/* Insert Head */
 
 class Node {
 public:
