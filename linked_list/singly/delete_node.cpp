@@ -2,7 +2,7 @@
 
 using namespace std;
 
-/* Delete node */
+/* Delete node by value */
 
 class Node {
 public:
@@ -16,21 +16,21 @@ public:
 };
 
 // TC - O(n), SC - O(1)
-Node* delete_node(Node* head, int k) {
-    if (!head || k <= 0) {
+Node* delete_node(Node* head, int target) {
+    if (!head) {
         return head;
     }
-    if (k == 1) {
+    if (head->info == target) {
         Node* tmp = head;
         head = head->next;
         delete tmp;
         return head;    
     }
     Node* cur = head;
-    for (int i = 1; i < k - 1 && cur; i++) {
+    while (cur->next && cur->next->info != target) {
         cur = cur->next;
     }
-    if (!cur || !cur->next) {
+    if (!cur->next) {
         return head;
     }
     Node* del = cur->next;
