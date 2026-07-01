@@ -3,6 +3,7 @@
 using namespace std;
 
 /* Delete node by value */
+// https://leetcode.com/problems/delete-node-in-a-linked-list/
 
 class Node {
 public:
