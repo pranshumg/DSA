@@ -2,7 +2,7 @@
 
 using namespace std;
 
-/* Insert tail */
+/* Insert Tail */
 
 class Node {
 public:
