@@ -2,7 +2,7 @@
 
 using namespace std;
 
-/* Reverse a doubly linked list */
+/* Reverse a Doubly linked list */
 
 class Node {
 public:
