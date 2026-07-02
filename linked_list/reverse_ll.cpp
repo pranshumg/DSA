@@ -1,0 +1,50 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+// Reverse a singly linked list
+
+class Node {
+public:
+    int info;
+    Node* next;
+
+    Node(int info) {
+        this->info = info;  
+        this->next = nullptr;
+    }
+
+    Node(int info, Node* next) {
+        this->info = info;  
+        this->next = next;
+    }
+};
+
+// Iterative
+// TC - O(n), SC - O(1)
+Node* reverse_ll(Node* head) {
+    Node* cur = head;
+    Node* prev = nullptr;
+    while (cur) {
+        Node* next = cur->next;
+        cur->next = prev;
+        prev = cur;
+        cur = next; 
+    }
+    return prev;
+}
+
+Node* solve(Node* cur, Node* prev) {
+    if (!cur) {
+        return prev;
+    }
+    Node* next = cur->next;
+    cur->next = prev;
+    return solve(next, cur);
+}
+
+// Recursive
+// TC - O(n), SC - O(n)
+Node* reverse_ll_rec(Node* head) {
+    return solve(head, nullptr);
+}
