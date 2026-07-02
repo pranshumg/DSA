@@ -35,17 +35,16 @@ Node* reverse_ll(Node* head) {
     return prev;
 }
 
-Node* solve(Node* cur, Node* prev) {
-    if (!cur) {
-        return prev;
-    }
-    Node* next = cur->next;
-    cur->next = prev;
-    return solve(next, cur);
-}
-
 // Recursive
 // TC - O(n), SC - O(n)
 Node* reverse_ll_rec(Node* head) {
-    return solve(head, nullptr);
-}
+    auto solve = [](auto&& self, Node* cur, Node* prev) -> Node* {
+        if (!cur) {
+            return prev;
+        }
+        Node* next = cur->next;
+        cur->next = prev;
+        return self(self, next, cur);
+    };
+    return solve(solve, head, nullptr);
+ }
