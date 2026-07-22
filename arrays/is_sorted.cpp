@@ -6,10 +6,10 @@ using namespace std;
 
 // TC - O(n), SC - O(1)
 bool is_sorted(vector<int>& v, int n) {
-    for (int i = 0; i < n - 1; i++) {
-        if (v[i] > v[i + 1]) {
-            return false;
-        }
+  for (int i = 0; i < n - 1; i++) {
+    if (v[i] > v[i + 1]) {
+      return false;
     }
-    return true;
+  }
+  return true;
 }

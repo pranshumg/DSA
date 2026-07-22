@@ -6,9 +6,9 @@ using namespace std;
 
 // TC - O(n), SC - O(n)
 void print_1_to_n(int n) {
-    if (!n) {
-        return;
-    }
-    print_1_to_n(n - 1);
-    cout << n << '\n';
+  if (!n) {
+    return;
+  }
+  print_1_to_n(n - 1);
+  cout << n << '\n';
 }

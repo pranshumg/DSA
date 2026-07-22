@@ -7,8 +7,8 @@ using namespace std;
 
 // TC - O(n), SC - O(n)
 bool rotate_string(string s, string t) {
-    if (int(s.size()) != int(t.size())) {
-        return false;
-    }
-    return (s + s).find(t) != string::npos;
+  if (int(s.size()) != int(t.size())) {
+    return false;
+  }
+  return (s + s).find(t) != string::npos;
 }

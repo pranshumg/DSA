@@ -7,10 +7,10 @@ using namespace std;
 
 // TC - O(n), SC - O(n)
 string largest_odd_number(string s) {
-    for (int i = int(s.size()) - 1; i >= 0; i--) {
-        if ((s[i] - '0') & 1) {
-            return s.substr(0, i + 1);
-        }
+  for (int i = int(s.size()) - 1; i >= 0; i--) {
+    if ((s[i] - '0') & 1) {
+      return s.substr(0, i + 1);
     }
-    return "";
+  }
+  return "";
 }

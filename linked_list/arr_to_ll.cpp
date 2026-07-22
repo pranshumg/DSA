@@ -6,25 +6,25 @@ using namespace std;
 
 class Node {
 public:
-    int info;
-    Node* next;
+  int info;
+  Node* next;
 
-    Node(int info) {
-        this->info = info;
-        this->next = nullptr;
-    }
+  Node(int info) {
+    this->info = info;
+    this->next = nullptr;
+  }
 };
 
 // TC - O(n), SC - O(1)
 Node* arr_to_ll(vector<int>& v) {
-    if (v.empty()) {
-        return nullptr;
-    }
-    Node* head = new Node(v[0]);
-    Node* tmp = head;
-    for (int i = 1; i < int(v.size()); i++) {
-        tmp->next = new Node(v[i]);
-        tmp = tmp->next;
-    }
-    return head;
+  if (v.empty()) {
+    return nullptr;
+  }
+  Node* head = new Node(v[0]);
+  Node* tmp = head;
+  for (int i = 1; i < int(v.size()); i++) {
+    tmp->next = new Node(v[i]);
+    tmp = tmp->next;
+  }
+  return head;
 }

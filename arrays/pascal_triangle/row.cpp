@@ -2,37 +2,35 @@
 
 using namespace std;
 
-using i64 = int64_t;
-
 /* Print any nth row of Pascal Triangle */
 
-i64 nCr(int n, int r) {
-    i64 res = 1;
-    for (int i = 0; i < r; i++) {
-        res *= (n - i);
-        res /= (i + 1);
-    }
-    return res;
+int64_t nCr(int n, int r) {
+  int64_t res = 1;
+  for (int i = 0; i < r; i++) {
+    res *= (n - i);
+    res /= (i + 1);
+  }
+  return res;
 }
 
 // Brute Force approach using nCr function
 // TC - O(r * r), SC - O(1)
 void print_row(int r) {
-    for (int c = 1; c <= r; c++) {
-        cout << nCr(r - 1, c - 1) << ' ';
-    }
-    cout << '\n';
+  for (int c = 1; c <= r; c++) {
+    cout << nCr(r - 1, c - 1) << ' ';
+  }
+  cout << '\n';
 }
 
 // Optimal approach using the property: Next Term = Current Term * (row - col) / col
 // TC - O(r), SC - O(1)
 void print_row(int r) {
-    i64 ans = 1;
-    cout << ans << ' '; // The first element is always 1
-    for (int i = 1; i < r; i++) {
-        ans *= (r - i);
-        ans /= i;
-        cout << ans << ' ';
-    }
-    cout << '\n';
+  int64_t ans = 1;
+  cout << ans << ' '; // The first element is always 1
+  for (int i = 1; i < r; i++) {
+    ans *= (r - i);
+    ans /= i;
+    cout << ans << ' ';
+  }
+  cout << '\n';
 }

@@ -6,18 +6,18 @@ using namespace std;
 
 class Node {
 public:
-    int info;
-    Node* next;
+  int info;
+  Node* next;
 
-    Node(int info) {
-        this->info = info;
-        this->next = nullptr;
-    }
+  Node(int info) {
+    this->info = info;
+    this->next = nullptr;
+  }
 };
 
 // TC - O(n), SC - O(1)
 void traverse(Node* head) {
-    for (Node* tmp = head; tmp; tmp = tmp->next) {
-        cout << tmp->info << " \n"[tmp->next == nullptr];
-    }
+  for (Node* tmp = head; tmp; tmp = tmp->next) {
+    cout << tmp->info << " \n"[tmp->next == nullptr];
+  }
 }

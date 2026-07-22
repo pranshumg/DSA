@@ -6,29 +6,29 @@ using namespace std;
 
 class Node {
 public:
-    int info;
-    Node* next;
+  int info;
+  Node* next;
 
-    Node(int info) {
-        this->info = info;
-        this->next = nullptr;
-    }
+  Node(int info) {
+    this->info = info;
+    this->next = nullptr;
+  }
 };
 
 // TC - O(n), SC - O(1)
 Node* delete_tail(Node* head) {
-    if (!head) {
-        return nullptr;
-    }
-    if (!head->next) {
-        delete head;
-        return nullptr;
-    }
-    Node* tmp = head;
-    while (tmp->next->next) {
-        tmp = tmp->next;
-    }
-    delete tmp->next;
-    tmp->next = nullptr;
-    return head;
+  if (!head) {
+    return nullptr;
+  }
+  if (!head->next) {
+    delete head;
+    return nullptr;
+  }
+  Node* tmp = head;
+  while (tmp->next->next) {
+    tmp = tmp->next;
+  }
+  delete tmp->next;
+  tmp->next = nullptr;
+  return head;
 }

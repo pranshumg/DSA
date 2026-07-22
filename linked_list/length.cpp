@@ -6,20 +6,20 @@ using namespace std;
 
 class Node {
 public:
-    int info;
-    Node* next;
+  int info;
+  Node* next;
 
-    Node(int info) {
-        this->info = info;
-        this->next = nullptr;
-    }
+  Node(int info) {
+    this->info = info;
+    this->next = nullptr;
+  }
 };
 
 // TC - O(n), SC - O(1)
 int length(Node* head) {
-    int cnt = 0;
-    for (Node* tmp = head; tmp; tmp = tmp->next) {
-        cnt++;
-    }
-    return cnt;
+  int cnt = 0;
+  for (Node* tmp = head; tmp; tmp = tmp->next) {
+    cnt++;
+  }
+  return cnt;
 } 

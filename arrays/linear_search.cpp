@@ -6,10 +6,10 @@ using namespace std;
 
 // TC - O(n), SC - O(1)
 int linear_search(vector<int>& v, int n, int k) {
-    for (int i = 0; i < n; i++) {
-        if (v[i] == k) {
-            return i;
-        }
+  for (int i = 0; i < n; i++) {
+    if (v[i] == k) {
+      return i;
     }
-    return -1;
+  }
+  return -1;
 }
