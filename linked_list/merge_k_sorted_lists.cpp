@@ -94,7 +94,7 @@ Node* merge_k_sorted_lists(vector<Node*>& v) {
 }
 
 // TC - O(N log K), SC - O(K)
-// where N is the total number of nodes in all lists
+// where N is the total number of nodes across all linked lists
 // and K is the number of linked lists
 Node* merge_k_sorted_lists(vector<Node*>& v) {
   priority_queue<pair<int, Node*>, vector<pair<int, Node*>>, greater<pair<int, Node*>>> pq;
