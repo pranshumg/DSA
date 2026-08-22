@@ -5,7 +5,7 @@ using namespace std;
 /* decimal to binary */
 
 // TC - O(log n), SC - O(log n)
-string dec_to_bin(int n) {
+string dec_to_bin(int64_t n) {
   if (n == 0) {
     return "0";
   }
