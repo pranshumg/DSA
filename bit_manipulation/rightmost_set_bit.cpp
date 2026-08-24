@@ -2,7 +2,7 @@
 
 using namespace std;
 
-/* rightmost set bit */
+/* Rightmost set bit */
 
 // TC - O(1), SC - O(1)
 int rightmost_set_bit(int n) {
