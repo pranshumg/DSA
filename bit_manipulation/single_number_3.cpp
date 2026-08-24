@@ -5,6 +5,21 @@ using namespace std;
 /* single number 3 */
 // https://leetcode.com/problems/single-number-iii/
 
+// TC - O(n log n), SC - O(n)
+vector<int> single_number(vector<int>& v) {
+  map<int, int> mp;
+  for (int i : v) {
+    mp[i]++;
+  }
+  vector<int> res;
+  for (auto& [el, cnt] : mp) {
+    if (cnt == 1) {
+      res.push_back(el);
+    }
+  }
+  return res;
+}
+
 // TC - O(n), SC - O(1)
 vector<int> single_number(vector<int>& v) {
   int xr = 0;
