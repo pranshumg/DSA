@@ -11,7 +11,7 @@ vector<vector<int>> power_set(vector<int>& v) {
   for (int mask = 0; mask < (1 << int(v.size())); mask++) {
     vector<int> tmp;
     for (int i = 0; i < int(v.size()); i++) {
-      if (mask & (1 << i)) {
+      if ((mask >> i) & 1) {
         tmp.push_back(v[i]);
       }
     }
