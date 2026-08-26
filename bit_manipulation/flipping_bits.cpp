@@ -10,6 +10,6 @@ unsigned flip(unsigned n) {
 }
 
 // TC - O(1), SC - O(1)
-unsigned flip(int n) {
+unsigned flip(unsigned n) {
   return n ^ ~unsigned(0);
 }
