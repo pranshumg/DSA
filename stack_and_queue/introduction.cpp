@@ -95,11 +95,11 @@ public:
 class Node {
 public:
   int info;
-  Node* netmpt;
+  Node* next;
   
-  Node(int info, Node* netmpt) {
+  Node(int info, Node* next) {
     this->info = info; 
-    this->netmpt = netmpt;
+    this->next = next;
   }
 };
 
@@ -131,7 +131,7 @@ public:
       return;
     }
     Node* del = top;
-    top = top->netmpt;
+    top = top->next;
     delete del;
     cur_sz--;
   }
@@ -156,8 +156,8 @@ public:
       rear = new Node(val, nullptr);
       front = rear;
     } else {
-      rear->netmpt = new Node(val, nullptr);
-      rear = rear->netmpt;
+      rear->next = new Node(val, nullptr);
+      rear = rear->next;
     }
     cur_sz++;
   }
@@ -180,7 +180,7 @@ public:
     if (cur_sz == 1) {
       front = rear = nullptr;
     } else {
-      front = front->netmpt;
+      front = front->next;
     }
     delete del;
     cur_sz--;
