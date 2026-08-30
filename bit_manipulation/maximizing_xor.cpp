@@ -3,6 +3,7 @@
 using namespace std;
 
 /* maximizing xor */
+// https://www.hackerrank.com/challenges/maximizing-xor/problem
 
 // TC - O(1), SC - O(1)
 int max_xor(int l, int r) {
