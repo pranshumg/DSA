@@ -15,16 +15,16 @@ int priority(char c) {
 string infix_to_postfix(string s) {
   stack<char> sk;
   string ans = "";
-  for (int i = 0; i < int(s.size()); i++) {
-    if (isalnum(s[i])) {
-      ans += s[i];
+  for (char c : s) {
+    if (isalnum(c)) {
+      ans += c;
       continue;
     }
-    if (s[i] == '(') {
-      sk.push(s[i]);
+    if (c == '(') {
+      sk.push(c);
       continue;
     } 
-    if (s[i] == ')') {
+    if (c == ')') {
       while (!sk.empty() && sk.top() != '(') {
         ans += sk.top();
         sk.pop();
@@ -32,11 +32,11 @@ string infix_to_postfix(string s) {
       if (!sk.empty()) sk.pop();
       continue;
     }
-    while (!sk.empty() && ((s[i] == '^' && priority(s[i]) < priority(sk.top())) || (s[i] != '^' && priority(s[i]) <= priority(sk.top())))) {
+    while (!sk.empty() && ((c == '^' && priority(c) < priority(sk.top())) || (c != '^' && priority(c) <= priority(sk.top())))) {
       ans += sk.top();
       sk.pop();
     }
-    sk.push(s[i]);
+    sk.push(c);
   }
   while (!sk.empty()) {
     ans += sk.top();
