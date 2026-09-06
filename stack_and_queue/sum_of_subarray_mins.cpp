@@ -14,7 +14,7 @@ vector<int> next_smaller_elements(vector<int>& v) {
     while (!sk.empty() && v[sk.top()] >= v[i]) {
       sk.pop();
     }
-    nse[i] = !sk.empty() ? sk.top() : -1;
+    nse[i] = !sk.empty() ? sk.top() : int(v.size());
     sk.push(i);
   }
   return nse;
