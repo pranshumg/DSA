@@ -1,8 +1,0 @@
-CompileFlags:
-  Add:
-  - -std=gnu++23
-  - -DPRANSHU_DEBUG
-  - -I/home/pranshu
-  Compiler: g++
-Diagnostics:
-  UnusedIncludes: None
