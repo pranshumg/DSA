@@ -6,10 +6,10 @@ using namespace std;
 
 // TC - O(1), SC - O(1)
 unsigned flip(unsigned n) {
-  return ~n;
+    return ~n;
 }
 
 // TC - O(1), SC - O(1)
 unsigned flip(unsigned n) {
-  return n ^ ~unsigned(0);
+    return n ^ ~unsigned(0);
 }

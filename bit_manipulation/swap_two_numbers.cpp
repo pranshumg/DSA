@@ -6,9 +6,9 @@ using namespace std;
 
 // TC - O(1), SC - O(1)
 void Swap(int& a, int& b) {
-  if (&a != &b) {
-    a ^= b;
-    b ^= a;
-    a ^= b;
-  }
+    if (&a != &b) {
+        a ^= b;
+        b ^= a;
+        a ^= b;
+    }
 }

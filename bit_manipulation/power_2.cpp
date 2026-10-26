@@ -7,8 +7,8 @@ using namespace std;
 
 // TC - O(1), SC - O(1)
 bool is_power_of_2(int n) {
-  if (n == 0 || n == INT_MIN || n == INT_MAX) {
-    return false;
-  }
-  return !(n & (n - 1));
+    if (n == 0 || n == INT_MIN || n == INT_MAX) {
+        return false;
+    }
+    return !(n & (n - 1));
 }

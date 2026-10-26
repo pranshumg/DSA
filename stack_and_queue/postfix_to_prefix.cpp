@@ -6,17 +6,17 @@ using namespace std;
 
 // TC - O(n), SC - O(n)
 string postfix_to_prefix(string s) {
-  stack<string> sk;
-  for (char c : s) {
-    if (isalnum(c)) {
-      sk.push(string(1, c));
-      continue;
+    stack<string> sk;
+    for (char c : s) {
+        if (isalnum(c)) {
+            sk.push(string(1, c));
+            continue;
+        }
+        string top1 = sk.top();
+        sk.pop();
+        string top2 = sk.top();
+        sk.pop();
+        sk.push(c + top2 + top1);
     }
-    string top1 = sk.top();
-    sk.pop();
-    string top2 = sk.top();
-    sk.pop();
-    sk.push(c + top2 + top1);
-  }
-  return sk.top();
+    return sk.top();
 }

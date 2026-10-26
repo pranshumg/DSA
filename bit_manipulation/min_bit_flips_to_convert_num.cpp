@@ -7,5 +7,5 @@ using namespace std;
 
 // TC - O(1), SC - O(1)
 int min_bit_flips(int start, int goal) {
-  return int(popcount(unsigned(start ^ goal)));
+    return int(popcount(unsigned(start ^ goal)));
 }
