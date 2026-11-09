@@ -14,14 +14,14 @@ bool is_valid(vector<vector<char>>& board, int row, int col, char c) {
     return true;
 }
 
-bool solve(vector<vector<char>>& board) {
+bool rec(vector<vector<char>>& board) {
     for (int i = 0; i < int(board.size()); i++) {
         for (int j = 0; j < int(board.size()); j++) {
             if (board[i][j] == '.') {
                 for (char c = '1'; c <= '9'; c++) {
                     if (is_valid(board, i, j, c)) {
                         board[i][j] = c;
-                        if (solve(board)) {
+                        if (rec(board)) {
                             return true;
                         } else {
                             board[i][j] = '.';
@@ -37,5 +37,5 @@ bool solve(vector<vector<char>>& board) {
 
 // TC - O(9^m), SC - O(m) where m is the number of empty cells
 void sudoku(vector<vector<char>>& board) {
-    solve(board);
+    rec(board);
 }

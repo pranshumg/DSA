@@ -14,7 +14,7 @@ bool is_palindrome(string& s, int l, int r) {
     return true;
 }
 
-void solve(int idx, string& s, vector<string>& tmp, vector<vector<string>>& res) {
+void rec(int idx, string& s, vector<string>& tmp, vector<vector<string>>& res) {
     if (idx == int(s.size())) {
         res.push_back(tmp);
         return;
@@ -22,7 +22,7 @@ void solve(int idx, string& s, vector<string>& tmp, vector<vector<string>>& res)
     for (int i = idx; i < int(s.size()); i++) {
         if (is_palindrome(s, idx, i)) {
             tmp.push_back(s.substr(idx, i - idx + 1));
-            solve(i + 1, s, tmp, res);
+            rec(i + 1, s, tmp, res);
             tmp.pop_back();
         }
     }
@@ -32,6 +32,6 @@ void solve(int idx, string& s, vector<string>& tmp, vector<vector<string>>& res)
 vector<vector<string>> partition(string s) {
     vector<vector<string>> res;
     vector<string> tmp;
-    solve(0, s, tmp, res);
+    rec(0, s, tmp, res);
     return res;
 }

@@ -30,7 +30,7 @@ bool check(int n, int row, int col, vector<string>& board) {
     return true;
 }
 
-void solve(int col, int n, vector<string>& board, vector<vector<string>>& res) {
+void rec(int col, int n, vector<string>& board, vector<vector<string>>& res) {
     if (col == n) {
         res.push_back(board);
         return;
@@ -38,7 +38,7 @@ void solve(int col, int n, vector<string>& board, vector<vector<string>>& res) {
     for (int row = 0; row < n; row++) {
         if (check(n, row, col, board)) {
             board[row][col] = 'Q';
-            solve(col + 1, n, board, res);
+            rec(col + 1, n, board, res);
             board[row][col] = '.';
         }
     }
@@ -52,11 +52,11 @@ vector<vector<string>> n_queens(int n) {
     for (auto& a : board) {
         a = s;
     }
-    solve(0, n, board, res);
+    rec(0, n, board, res);
     return res;
 }
 
-void solve(int col, int n, vector<bool>& lower_diagnol, vector<bool>& upper_diagnol, vector<bool>& left_row, vector<string>& board, vector<vector<string>>& res) {
+void rec(int col, int n, vector<bool>& lower_diagnol, vector<bool>& upper_diagnol, vector<bool>& left_row, vector<string>& board, vector<vector<string>>& res) {
     if (col == n) {
         res.push_back(board);
         return;
@@ -67,7 +67,7 @@ void solve(int col, int n, vector<bool>& lower_diagnol, vector<bool>& upper_diag
             left_row[row] = true;
             lower_diagnol[row + col] = true;
             upper_diagnol[n - 1 + col - row] = true;
-            solve(col + 1, n, lower_diagnol, upper_diagnol, left_row, board, res);
+            rec(col + 1, n, lower_diagnol, upper_diagnol, left_row, board, res);
             board[row][col] = '.';
             left_row[row] = false;
             lower_diagnol[row + col] = false;
@@ -85,6 +85,6 @@ vector<vector<string>> n_queens(int n) {
         a = s;
     }
     vector<bool> lower_diagnol(2 * n - 1, false), upper_diagnol(2 * n - 1, false), left_row(n, false);
-    solve(0, n, lower_diagnol, upper_diagnol, left_row, board, res);
+    rec(0, n, lower_diagnol, upper_diagnol, left_row, board, res);
     return res;
 }

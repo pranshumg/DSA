@@ -5,14 +5,14 @@ using namespace std;
 /* K-th permutation sequence */
 // https://leetcode.com/problems/permutation-sequence/
 
-void solve(int idx, string& s, vector<string>& res) {
+void rec(int idx, string& s, vector<string>& res) {
     if (idx == int(s.size())) {
         res.push_back(s);
         return;
     }
     for (int i = idx; i < int(s.size()); i++) {
         swap(s[idx], s[i]);
-        solve(idx + 1, s, res);
+        rec(idx + 1, s, res);
         swap(s[idx], s[i]);
     }
 }
@@ -24,7 +24,7 @@ string get_permutation(int n, int k) {
     for (int i = 1; i <= n; i++) {
         s += i + '0';
     }
-    solve(0, s, res);
+    rec(0, s, res);
     sort(res.begin(), res.end());
     return res[k - 1];
 }
