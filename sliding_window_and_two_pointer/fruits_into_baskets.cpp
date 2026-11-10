@@ -52,9 +52,7 @@ int total(vector<int>& v) {
             }
             l++;
         }
-        if (int(mp.size()) <= 2) {
-            ans = max(ans, r - l + 1);
-        }
+        ans = max(ans, r - l + 1);
     }
     return ans;
 }
