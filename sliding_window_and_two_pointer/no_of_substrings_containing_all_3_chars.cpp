@@ -46,9 +46,7 @@ int number(string& s) {
     vector<int> idx(3, -1);
     for (int i = 0; i < int(s.size()); i++) {
         idx[s[i] - 'a'] = i;
-        if (idx[0] > -1 && idx[1] > -1 && idx[2] > -1) {
-            ans += min({idx[0], idx[1], idx[2]}) + 1;
-        }
+        ans += 1 + min({idx[0], idx[1], idx[2]});
     }
     return ans;
 }
