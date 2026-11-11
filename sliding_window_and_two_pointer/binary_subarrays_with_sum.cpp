@@ -15,7 +15,9 @@ int number(vector<int>& v, int goal) {
             if (sum > goal) {
                 break;
             }
-            ans += j - i + 1;
+            if (sum == goal) {
+                ans++;
+            }
         }
     }
     return ans;
@@ -38,6 +40,9 @@ int number(vector<int>& v, int goal) {
 // TC - O(n), SC - O(1)
 int number(vector<int>& v, int goal) {
     auto f = [&](int x) -> int {
+        if (x < 0) {
+            return 0;
+        }
         int cnt = 0, sum = 0;
         for (int l = 0, r = 0; r < int(v.size()); r++) {
             sum += v[r];
