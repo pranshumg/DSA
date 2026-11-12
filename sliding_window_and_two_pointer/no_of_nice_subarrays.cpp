@@ -19,6 +19,19 @@ int number(vector<int>& v, int k) {
     return ans;
 }
 
+// TC - O(n log n), SC - O(n)
+int number(vector<int>& v, int k) {
+    int ans = 0, odd = 0;
+    map<int, int> mp;
+    mp[0]++;
+    for (int i = 0; i < int(v.size()); i++) {
+        if (v[i] & 1) odd++;
+        ans += mp[odd - k];
+        mp[odd]++;
+    }
+    return ans;
+}
+
 // TC - O(n), SC - O(1)
 int number(vector<int>& v, int k) {
     auto f = [&](int x) -> int {
