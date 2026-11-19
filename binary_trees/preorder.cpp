@@ -3,7 +3,7 @@
 using namespace std;
 
 /* preorder traversal of binary tree */
-// https://leetcode.com/problems/binary-tree-inorder-traversal/
+// https://leetcode.com/problems/binary-tree-preorder-traversal/
 
 class Node {
 public:
