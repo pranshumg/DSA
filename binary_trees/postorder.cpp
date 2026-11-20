@@ -33,6 +33,26 @@ void postorder_rec(Node* root) {
     cout << root->info << ' ';
 }
 
+// TC - O(n), SC - O(n)
+void postorder(Node* root) {
+    Node* cur = root;
+    stack<Node*> sk1, sk2;
+    while (cur || !sk1.empty()) {
+        while (cur) {
+            sk2.push(cur);
+            sk1.push(cur);
+            cur = cur->right;
+        }
+        cur = sk1.top();
+        sk1.pop();
+        cur = cur->left;
+    }
+    while (!sk2.empty()) {
+        cout << sk2.top()->info << ' ';
+        sk2.pop();
+    }
+}
+
 // TC - O(n), SC - O(h)
 void postorder(Node* root) {
     Node* cur = root;
