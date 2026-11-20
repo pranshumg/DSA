@@ -15,14 +15,36 @@ public:
         this->info = info;
         this->left = this->right = nullptr;
     }
+
+    Node(int info, Node* left, Node* right) {
+        this->info = info;
+        this->left = left;
+        this->right = right;
+    }
 };
 
 // TC - O(n), SC - O(h)
-void inorder(Node* root) {
+void inorder_rec(Node* root) {
     if (!root) { 
         return;
     }
-    inorder(root->left);
+    inorder_rec(root->left);
     cout << root->info << ' ';
-    inorder(root->right);
+    inorder_rec(root->right);
+}
+
+// TC - O(n), SC - O(n)
+void inorder(Node* root) {
+    Node* cur = root;
+    stack<Node*> sk;
+    while (cur || !sk.empty()) {
+        while (cur) {
+            sk.push(cur);
+            cur = cur->left;
+        }
+        cur = sk.top();
+        sk.pop();
+        cout << cur->info << ' ';
+        cur = cur->right;
+    }
 }
