@@ -33,7 +33,7 @@ void preorder_rec(Node* root) {
     preorder_rec(root->right);
 }
 
-// TC - O(n), SC - O(n)
+// TC - O(n), SC - O(h)
 void preorder(Node* root) {
     Node* cur = root;
     stack<Node*> sk;

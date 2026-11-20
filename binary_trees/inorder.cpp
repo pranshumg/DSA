@@ -33,7 +33,7 @@ void inorder_rec(Node* root) {
     inorder_rec(root->right);
 }
 
-// TC - O(n), SC - O(n)
+// TC - O(n), SC - O(h)
 void inorder(Node* root) {
     Node* cur = root;
     stack<Node*> sk;
