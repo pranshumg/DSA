@@ -5,6 +5,7 @@ using namespace std;
 /* min stack */
 // https://leetcode.com/problems/min-stack/
 
+// Approach: Auxiliary minimum stack
 // TC - O(1), SC - O(n)
 class min_stack {
 private:
@@ -34,6 +35,7 @@ public:
     }
 };
 
+// Approach: Encoded values in one stack
 // TC - O(1), SC - O(n)
 class min_stack {
 private:

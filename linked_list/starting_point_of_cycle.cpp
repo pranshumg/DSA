@@ -21,6 +21,7 @@ public:
     }
 };
 
+// Approach: Visited-node hash map
 // TC - O(n log n), SC - O(n)
 Node* starting_point(Node* head) {
     map<Node*, int> mp;
@@ -35,6 +36,7 @@ Node* starting_point(Node* head) {
     return nullptr;
 }
 
+// Approach: Floyd’s tortoise-and-hare algorithm
 // TC - O(n), SC - O(1)
 Node* starting_point(Node* head) {
     Node* slow = head;

@@ -5,6 +5,7 @@ using namespace std;
 /* trapping rainwater */
 // https://leetcode.com/problems/trapping-rain-water/
 
+// Approach: Prefix and suffix maximum arrays
 // TC - O(n), SC - O(n)
 int trap(vector<int>& v) {
     vector<int> suf(int(v.size()) + 1, 0);
@@ -21,6 +22,7 @@ int trap(vector<int>& v) {
     return ans;
 }
 
+// Approach: Two-pointer scan with running maxima
 // TC - O(n), SC - O(1)
 int trap(vector<int>& v) {
     int ans = 0;

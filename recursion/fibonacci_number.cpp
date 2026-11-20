@@ -5,6 +5,7 @@ using namespace std;
 /* Fibonacci Number */
 // https://leetcode.com/problems/fibonacci-number/
 
+// Approach: Naive recursive decomposition
 // TC - O(2^n), SC - O(n)
 int fibonacci(int n) {
     if (n <= 1) {
